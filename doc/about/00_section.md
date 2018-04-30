@@ -1,3 +1,6 @@
 <!SLIDE center subsection>
-# Rubocop - Your code will thank you for it
+# Rubocop
+
+Role models are important.
+-- Officer Alex J. Murphy / RoboCop
 
