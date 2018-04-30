@@ -1,6 +1,6 @@
 class Bad
   def foo
-    if something 
+    if something
       puts "FOO"
       end
   end
