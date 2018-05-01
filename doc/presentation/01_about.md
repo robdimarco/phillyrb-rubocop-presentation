@@ -1,30 +1,25 @@
-<!SLIDE  center>
+<!SLIDE >
 # Rubocop is...
 
 * Static Code Analysis
 * Best Practice Enforcer
-* Teacher
+* Teacher of Ruby
 
-<!SLIDE center>
+<!SLIDE>
 # Installation / Running
 
     @@@ Bash
-    gem install rubocop
-    rubocop
+    gem install rubocop # bundle install
+    be rubocop
 
-<!SLIDE center>
-# The Cops
-* Cop
-*
-
-<!SLIDE center>
+<!SLIDE>
 # How It Works
 
-* `parser` gem to create Abstract Syntax Tree
-* Cops define matching syntax
-* Cops can supply warnings and corrections
+* `parser` to create an Abstract Syntaxt Tree from Ruby files
+* "Cops" define matching rules, violation documentation, and (sometimes) auto-correct
+* Cops are organized in to departments
 
-<!SLIDE center>
+<!SLIDE>
 # [Boolean Symbol](https://github.com/bbatsov/rubocop/blob/master/lib/rubocop/cop/lint/boolean_symbol.rb)
     @@@ Ruby
     class BooleanSymbol < Cop
@@ -40,15 +35,15 @@
       end
     end
 
-<!SLIDE center>
+<!SLIDE>
 # Cop In Action
 
     @@@ Bash
     cat lib/boolean_sumbol.rb
     be ruby-parse  lib/boolean_symbol.rb
-    rubocop lib/boolean_symbol.rb
+    be rubocop lib/boolean_symbol.rb
 
-<!SLIDE center>
+<!SLIDE>
 # [BigDecimal New](https://github.com/bbatsov/rubocop/blob/master/lib/rubocop/cop/lint/big_decimal_new.rb)
 
     @@@ Ruby
@@ -78,12 +73,44 @@
       end
     end
 
-<!SLIDE center>
+<!SLIDE>
 # Cop In Action
 
     @@@ Bash
     cat lib/big_decimal.rb
     be ruby-parse  lib/big_decimal.rb
-    rubocop lib/big_decimal.rb
-    rubocop -a lib/big_decimal.rb
+    be rubocop lib/big_decimal.rb
+    be rubocop -a lib/big_decimal.rb
 
+<!SLIDE>
+# Internal Affairs - Control the cops
+
+* Configuration (.rubocop.yml)
+* Disable Oneline
+* Disable/Enable Block
+
+<!SLIDE>
+# Cop In Action
+
+    @@@ Bash
+    cat lib/disable.rb
+    be rubocop lib/disable.rb
+
+
+<!SLIDE>
+# Improving Your Code - Style
+
+* Most based on [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
+*
+
+<!SLIDE>
+# Improving Your Code - Metrics
+
+
+<!SLIDE>
+# Improving Your Code - A Better Way
+
+
+
+* [Metrics]
+* [Performance]
