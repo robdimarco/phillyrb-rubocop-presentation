@@ -135,18 +135,34 @@ Role models are important / Officer Alex J. Murphy / RoboCop
 <!SLIDE>
 # Improving Your Code - Style
 
-* Related to [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
+* Mostly from [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
 * Countless layout / style options. Choose and stick.
 * Example [NumericPredicate](http://rubocop.readthedocs.io/en/latest/cops_style/#stylenumericpredicate)
 
 <!SLIDE>
-# Improving Your Code - Metrics
+# Improving Your Code - AbcSize
+
+*[AbcMetric](http://c2.com/cgi/wiki?AbcMetric)
+* A == Assignments
+* B == Branches
+* C == Conditions
+* Metric is the square root of the sum of the squares
+
+<!SLIDE>
+# Improving Your Code - CyclomaticComplexity
+
+*[CyclomaticComplexity](http://c2.com/cgi/wiki?CyclomaticComplexityMetric)
+* Count of conditions (if/unless/while/ternary)
 
 
 <!SLIDE>
-# Improving Your Code - A Better Way
+# Improving Your Code - PerceivedComplexity
 
+*[PerceivedComplexity](http://c2.com/cgi/wiki?CyclomaticComplexityMetric)
+* Similar to Cyclomatic but includes `else` and minimizes `when`
 
+<!SLIDE>
+# Improving Your Code - Rails
 
-* [Metrics]
-* [Performance]
+* Date
+* Presence
