@@ -168,3 +168,10 @@
 # Metrics Example - lib/reddit.rb
 
 Let's fix together
+
+<!SLIDE>
+# Rob's Opinions
+
+* Have it in your code editor
+* Choose and Stick With Your Config
+* Don't require for a clean build
