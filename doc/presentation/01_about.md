@@ -1,16 +1,17 @@
-<!SLIDE center subsection >
-# Rubocop
+<!SLIDE   subsection>
+# Rubocop #
 
-Role models are important / Officer Alex J. Murphy / RoboCop
+### Rob Di Marco - 5/1/2018 - philly.rb
 
-.callout Rob Di Marco 5/1/2018 philly.rb
+    Role models are important
+      -- Officer Alex J. Murphy / RoboCop
 
 <!SLIDE >
 # Rubocop is...
 
 * Static Code Analysis
 * Best Practice Enforcer
-* Teacher of Ruby
+* A Guide Towards Better Ruby
 
 <!SLIDE>
 # Installation / Running
@@ -22,7 +23,7 @@ Role models are important / Officer Alex J. Murphy / RoboCop
 <!SLIDE>
 # How It Works
 
-* `parser` to create an Abstract Syntaxt Tree from Ruby files
+* `parser` to create an Abstract Syntax Tree from Ruby files
 * __Cops__ define matching rules, violation documentation, and (sometimes) auto-correct
 * Cops are organized in to __departments__
 
@@ -120,7 +121,7 @@ Role models are important / Officer Alex J. Murphy / RoboCop
 * Disable/Enable Block
 
 <!SLIDE>
-# Cop In Action
+# Internal Affairs In Action
 
     @@@ Console
     > cat lib/disable.rb
@@ -140,29 +141,30 @@ Role models are important / Officer Alex J. Murphy / RoboCop
 * Example [NumericPredicate](http://rubocop.readthedocs.io/en/latest/cops_style/#stylenumericpredicate)
 
 <!SLIDE>
-# Improving Your Code - AbcSize
-
-*[AbcMetric](http://c2.com/cgi/wiki?AbcMetric)
-* A == Assignments
-* B == Branches
-* C == Conditions
-* Metric is the square root of the sum of the squares
-
-<!SLIDE>
-# Improving Your Code - CyclomaticComplexity
-
-*[CyclomaticComplexity](http://c2.com/cgi/wiki?CyclomaticComplexityMetric)
-* Count of conditions (if/unless/while/ternary)
-
-
-<!SLIDE>
-# Improving Your Code - PerceivedComplexity
-
-*[PerceivedComplexity](http://c2.com/cgi/wiki?CyclomaticComplexityMetric)
-* Similar to Cyclomatic but includes `else` and minimizes `when`
-
-<!SLIDE>
 # Improving Your Code - Rails
 
-* Date
-* Presence
+    @@@Ruby
+    def bad_use_of_time
+      Rails.logger.debug Time.now
+    end
+
+    def foobar
+      foo.present? ? foo : 'bar'
+    end
+
+<!SLIDE>
+# Improving Your Code - Metrics
+
+* [AbcMetric](http://c2.com/cgi/wiki?AbcMetric)
+  * A == Assignments
+  * B == Branches
+  * C == Conditions
+* [CyclomaticComplexity](http://c2.com/cgi/wiki?CyclomaticComplexityMetric)
+  * Count of conditions (if/unless/while/ternary)
+* [PerceivedComplexity](http://c2.com/cgi/wiki?CyclomaticComplexityMetric)
+  * Similar to Cyclomatic but includes `else` and minimizes `when`
+
+<!SLIDE>
+# Metrics Example - lib/reddit.rb
+
+Let's fix together

@@ -2,5 +2,6 @@
 # References
 
 * [Documentation](http://rubocop.readthedocs.io/en/latest/)
-* [Github](https://github.com/bbatsov/rubocop)
-* [Parser](https://github.com/whitequark/parser)
+* [Rubocop Github](https://github.com/bbatsov/rubocop)
+* [Ruby Style Guide Github](https://github.com/bbatsov/ruby-style-guide)
+* [Parser Github](https://github.com/whitequark/parser)
