@@ -2,3 +2,4 @@ stats
 .bundle
 vendor
 static
+data/
