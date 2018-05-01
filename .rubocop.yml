@@ -2,3 +2,5 @@ Documentation:
   Enabled: false
 FrozenStringLiteralComment:
   Enabled: false
+# NumericPredicate:
+#   EnforcedStyle: comparison

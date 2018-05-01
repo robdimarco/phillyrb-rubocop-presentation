@@ -1,3 +1,10 @@
+<!SLIDE center subsection >
+# Rubocop
+
+Role models are important / Officer Alex J. Murphy / RoboCop
+
+.callout Rob Di Marco 5/1/2018 philly.rb
+
 <!SLIDE >
 # Rubocop is...
 
@@ -8,16 +15,16 @@
 <!SLIDE>
 # Installation / Running
 
-    @@@ Bash
-    gem install rubocop # bundle install
-    be rubocop
+* Install gem (`gem install` or `bundle install`)
+* Run `rubocop` from command line
+* Install in your favorite text editor
 
 <!SLIDE>
 # How It Works
 
 * `parser` to create an Abstract Syntaxt Tree from Ruby files
-* "Cops" define matching rules, violation documentation, and (sometimes) auto-correct
-* Cops are organized in to departments
+* __Cops__ define matching rules, violation documentation, and (sometimes) auto-correct
+* Cops are organized in to __departments__
 
 <!SLIDE>
 # [Boolean Symbol](https://github.com/bbatsov/rubocop/blob/master/lib/rubocop/cop/lint/boolean_symbol.rb)
@@ -38,10 +45,25 @@
 <!SLIDE>
 # Cop In Action
 
-    @@@ Bash
-    cat lib/boolean_sumbol.rb
-    be ruby-parse  lib/boolean_symbol.rb
-    be rubocop lib/boolean_symbol.rb
+    @@@ Console
+
+    > cat lib/boolean_symbol.rb
+    if :false
+      puts 1
+    else
+      puts true
+    end
+    >
+    > be ruby-parse  lib/boolean_symbol.rb
+    (if
+      (sym :false)
+      (send nil :puts
+        (int 1))
+      (send nil :puts
+        (true)))
+    >
+    > be rubocop lib/boolean_symbol.rb
+
 
 <!SLIDE>
 # [BigDecimal New](https://github.com/bbatsov/rubocop/blob/master/lib/rubocop/cop/lint/big_decimal_new.rb)
@@ -76,11 +98,19 @@
 <!SLIDE>
 # Cop In Action
 
-    @@@ Bash
-    cat lib/big_decimal.rb
-    be ruby-parse  lib/big_decimal.rb
-    be rubocop lib/big_decimal.rb
-    be rubocop -a lib/big_decimal.rb
+    @@@ Console
+    > cat lib/big_decimal.rb
+    _d = BigDecimal.new(123.456, 3)
+    >
+    > be ruby-parse  lib/big_decimal.rb
+    (lvasgn :_d
+      (send
+        (const nil :BigDecimal) :new
+        (float 123.456)
+        (int 3)))
+    >
+    > be rubocop lib/big_decimal.rb
+    > be rubocop -a lib/big_decimal.rb
 
 <!SLIDE>
 # Internal Affairs - Control the cops
@@ -92,16 +122,22 @@
 <!SLIDE>
 # Cop In Action
 
-    @@@ Bash
-    cat lib/disable.rb
-    be rubocop lib/disable.rb
+    @@@ Console
+    > cat lib/disable.rb
+    # rubocop:disable UselessAssignment
+    for x in (0..19) # rubocop:disable Style/For
+    end
+    # rubocop:enable UselessAssignment
+    >
+    > be rubocop lib/disable.rb
 
 
 <!SLIDE>
 # Improving Your Code - Style
 
-* Most based on [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
-*
+* Related to [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
+* Countless layout / style options. Choose and stick.
+* Example [NumericPredicate](http://rubocop.readthedocs.io/en/latest/cops_style/#stylenumericpredicate)
 
 <!SLIDE>
 # Improving Your Code - Metrics
