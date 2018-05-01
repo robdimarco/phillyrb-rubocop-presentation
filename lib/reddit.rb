@@ -31,13 +31,14 @@ def reddit_ruby_topics
         '*****'
       end
 
-    blog = /medium\.com|blog/.match?(node['data']['title'])
-
-    puts(
-      prefix + ' ' + (blog ? '[BLOG] ' : '') +
-      node['data']['title'] +
-      ' from ' + node['data']['author']
-    )
+    is_blog = /blog/.match?(node['data']['url'])
+    is_medium = /medium\.com/.match?(node['data']['url'])
+    str = prefix + ' ' + node['data']['title'] + ' from ' + node['data']['author'] # rubocop:disable Metrics/LineLength
+    str = "\e[31m#{str}\e[0m" \
+      if is_blog
+    str = "\e[34m#{str}\e[0m" \
+      if is_medium
+    puts str
   end
 end
 # rubocop:enable MethodLength,CyclomaticComplexity,AbcSize
